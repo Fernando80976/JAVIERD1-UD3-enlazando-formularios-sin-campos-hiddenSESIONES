@@ -31,21 +31,21 @@ public class FormsController {
             HttpSession session,
             Model modelo) {
 
-        // nombre
+        
         if (nombre != null) {
             session.setAttribute("nombre", nombre);
         } else if (session.getAttribute("nombre") != null) {
             nombre = (String) session.getAttribute("nombre");
         }
 
-        // signo
+       
         if (signo != null) {
             session.setAttribute("signo", signo);
         } else if (session.getAttribute("signo") != null) {
             signo = (String) session.getAttribute("signo");
         }
 
-        // aficciones
+        
         if (aficciones != null) {
             session.setAttribute("aficciones", aficciones);
         } else if (session.getAttribute("aficciones") != null) {
@@ -87,7 +87,6 @@ public class FormsController {
             respuestas.add(aficciones);
             modelo.addAttribute("respuestas", respuestas);
 
-            // Limpiar sesión si quieres finalizar
             session.invalidate();
         }
 
